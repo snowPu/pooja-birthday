@@ -1,0 +1,68 @@
+<ActionBar class="action-bar">
+    <Label text="Happy Birthday Pooja!" class="actionBarLabel"></Label>
+</ActionBar>
+
+
+<GridLayout tkExampleTitle tkToggleNavButton>
+	<StackLayout row="0">
+        <RadListView [items]="messagePhotoArray" marginRight="-2" *ngIf="tab == 0">
+            <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"
+                itemHeight="200" spanCount="1">
+            </ListViewGridLayout>
+            <ng-template tkListItemTemplate let-item="item">
+                <GridLayout backgroundColor="White">
+                    <GridLayout>
+                        <ios>
+                            <Image src="{{ item.photo }}" stretch="aspectFill"></Image>
+                        </ios>
+                        <android>
+                            <Image src="{{ item.photo }}" stretch="aspectFill"
+                                height="350"></Image>
+
+                            <!-- <FrescoDrawee horizontalAlignment="stretch" height="180"
+                                imageUri="{{ item.imageSrc }}"></FrescoDrawee> -->
+                        </android>
+                        <GridLayout verticalAlignment="bottom">
+                            <StackLayout paddingTop="8" paddingBottom="8"
+                                paddingLeft="16" paddingRight="16" class="messageBox">
+                                <Label text="{{ item.name }}" class="messageName"></Label>
+                                <Label text="{{ item.message }}" class="messageMessage"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </ng-template>
+        </RadListView>
+        <RadListView [items]="messagePhotoArray" marginRight="-2" *ngIf="tab == 1">
+            <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"
+                itemHeight="200" spanCount="1">
+            </ListViewGridLayout>
+            <ng-template tkListItemTemplate let-item="item">
+                <GridLayout backgroundColor="White">
+                    <GridLayout>
+                        <ios>
+                            <Image src="{{ item.photo }}" stretch="aspectFill"></Image>
+                        </ios>
+                        <android>
+                            <Image src="{{ item.photo }}" stretch="aspectFill"
+                                height="350"></Image>
+
+                            <!-- <FrescoDrawee horizontalAlignment="stretch" height="180"
+                                imageUri="{{ item.imageSrc }}"></FrescoDrawee> -->
+                        </android>
+                        <GridLayout verticalAlignment="bottom">
+                            <StackLayout paddingTop="8" paddingBottom="8"
+                                paddingLeft="16" paddingRight="16" class="messageBox">
+                                <Label text="{{ item.name }}" class="messageName"></Label>
+                                <Label text="{{ item.message }}" class="messageMessage"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </ng-template>
+        </RadListView>
+    </StackLayout>
+
+    
+	<BottomBar row="1" (tabSelected)="tabSelected($event)"></BottomBar>
+</GridLayout>

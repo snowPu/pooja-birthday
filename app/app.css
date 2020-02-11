@@ -1,0 +1,29 @@
+@import '~nativescript-theme-core/css/core.light.css';
+
+.action-bar {
+    background-color: White;
+}
+
+.actionBarLabel {
+    font-family: "Varela", "varela-regular";
+    font-size: 20;
+}
+
+.messageBox {
+    background: rgba(100, 100, 100, .70);
+}
+
+.messageName {
+    color: White;
+    font-family: 'Nordica Plus', 'nordicaclassicltext';
+    font-weight: bold;
+    font-size: 30;
+    margin-bottom: 30px;
+}
+
+.messageMessage {
+    color: darkgray;
+    font-family: 'Nordica Plus', 'nordicaclassicltext';
+    font-size: 18;
+    /* text-transform: uppercase; */
+}
