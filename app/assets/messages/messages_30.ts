@@ -4,6 +4,7 @@ export const messages_30 = {
   	
     "Sukanya": `So you're 30, or entering 31? I'm not sure if you're even checking this app this year 😂
     Wish you a very very happy birthday! :)
+    Thank you for being in my life!
     Love you loads! ❤`,
 
 
