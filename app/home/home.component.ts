@@ -17,10 +17,18 @@ const BIRTHDAY_30 = new Date(2022, 1, 12);
 export class HomeComponent implements OnInit {
 
     age: number = 27;
-    messages;
-    messagePhotoArray = [];
+    messages_28;
+    messages_29;
+    messages_30;
+    
+    messagePhotoArray_28 = [];
+    messagePhotoArray_29 = [];
+    messagePhotoArray_30 = [];
     photoDIR = '~/assets/images/';
     tab = 0;
+
+    initialMessageHeight = 60;
+
 
     // locations: { city: string, country: string, imageSrc: string }[] = [
     //     { city: "Yarlford", country: "Aldorria", imageSrc: "https://placem.at/places?random=1&w=500&txt=0" },
@@ -46,24 +54,57 @@ export class HomeComponent implements OnInit {
     }
 
     setMessages() {
-        if (this.age == 28) {
-            this.messages = messages_28;
-        }
-        else if (this.age == 29) {
-            this.messages = messages_29;
-        }
-        else if (this.age == 30) {
-            this.messages = messages_30;
+        this.messages_28 = messages_28;
+        this.messages_29 = messages_29;
+        this.messages_30 = messages_30;
+    }
+
+    switchMessageExpanded(item) {
+        if (!item.messageExpanded) {
+            item.messageHeight = 400;
+            item.messageExpanded = true;
+        } else {
+            item.messageHeight = this.initialMessageHeight;
+            item.messageExpanded = false;
         }
     }
 
     setMessagePhotoArray() {
-        for (let message in this.messages) {
-            this.messagePhotoArray.push({
-                name: message,
-                message: this.messages[message],
-                photo: this.photoDIR + message + '.jpg'
-            });
+        for (let message in this.messages_28) {
+            if (this.age == 28) {
+                this.messagePhotoArray_28.push({
+                    name: message,
+                    message: this.messages_28[message],
+                    photo: this.photoDIR + message + '.jpg',
+                    messageHeight: this.initialMessageHeight,
+                    messageExpanded: false
+                });
+            }
+            
+        }
+
+        for (let message in this.messages_29) {
+            if (this.age == 29) {
+                this.messagePhotoArray_29.push({
+                    name: message,
+                    message: this.messages_29[message],
+                    photo: this.photoDIR + message + '.jpg',
+                    messageHeight: this.initialMessageHeight,
+                    messageExpanded: false
+                });
+            }
+        }
+
+        for (let message in this.messages_30) {
+            if (this.age == 30) {
+                this.messagePhotoArray_30.push({
+                    name: message,
+                    message: this.messages_30[message],
+                    photo: this.photoDIR + message + '.jpg',
+                    messageHeight: this.initialMessageHeight,
+                    messageExpanded: false
+                });
+            }
         }
     }
 

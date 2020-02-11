@@ -1,17 +1,16 @@
-<GridLayout height="60" verticalAlignment="bottom">
+<GridLayout height="60" verticalAlignment="bottom" class="bottomBar">
 	<GridLayout columns="*, *, *, *" height="60" backgroundColor="#0D0D12">
-		<!-- <GridLayout #tabHighlight col="0" backgroundColor="#F8A200"></GridLayout> -->
-		<GridLayout col="0" (tap)="selectTab(0)">
+		<GridLayout col="0" (tap)="selectTab(0)" [ngClass]="{'selected-tab': selectedTab == 0}">
 			<Image #image1 src="{{ '~/assets/images/birthday.png' }}" height="40" width="40"></Image>
 		</GridLayout>
-		<GridLayout col="1" (tap)="selectTab(1)">
-			<Image #image2 src="{{ '~/assets/images/birthday.png' }}" height="40" width="40"></Image>
+		<GridLayout col="1" (tap)="selectTab(1)" [ngClass]="{'selected-tab': selectedTab == 1}">
+			<Image #image2 src="{{ '~/assets/images/age_28.png' }}" height="40" width="40"></Image>
 		</GridLayout>
-		<GridLayout col="2" (tap)="selectTab(2)">
-			<Image #image3 src="{{ '~/assets/images/birthday.png' }}" height="40" width="40"></Image>
+		<GridLayout col="2" (tap)="selectTab(2)" [ngClass]="{'selected-tab': selectedTab == 2}">
+			<Image #image3 src="{{ '~/assets/images/age_29.png' }}" height="40" width="40"></Image>
 		</GridLayout>
-		<GridLayout col="3" (tap)="selectTab(3)">
-			<Image #image4 src="{{ '~/assets/images/birthday.png' }}" height="40" width="40"></Image>
+		<GridLayout col="3" (tap)="selectTab(3)" [ngClass]="{'selected-tab': selectedTab == 3}">
+			<Image #image4 src="{{ '~/assets/images/age_30.png' }}" height="40" width="40"></Image>
 		</GridLayout>
 	</GridLayout>
 

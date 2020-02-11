@@ -4,8 +4,29 @@
 
 
 <GridLayout tkExampleTitle tkToggleNavButton>
-	<StackLayout row="0">
-        <RadListView [items]="messagePhotoArray" marginRight="-2" *ngIf="tab == 0">
+	<StackLayout row="0" class="messagesStack">
+        <StackLayout *ngIf="tab == 0">
+            <GridLayout verticalAlignment="top">
+                <Label text="Happy Birthday Pooja!" class="birthdayMessage"></Label>
+            </GridLayout>
+            <GridLayout backgroundColor="White">
+                <GridLayout>
+                    <ios>
+                        <Image src="{{ '~/assets/images/Pooja.jpg' }}" stretch="aspectFill"></Image>
+                    </ios>
+                    <android>
+                        <Image src="{{ '~/assets/images/Pooja.jpg' }}" stretch="aspectFill" height="350"></Image>
+
+                        <!-- <FrescoDrawee horizontalAlignment="stretch" height="180"
+                            imageUri="{{ item.imageSrc }}"></FrescoDrawee> -->
+                    </android>
+                </GridLayout>
+            </GridLayout>
+        </StackLayout>
+        <StackLayout *ngIf="tab == 1 && messagePhotoArray_28.length == 0">
+            <Label text="You're not 28 yet! Come back when you are :)" class="birthdayMessage"></Label>
+        </StackLayout>
+        <RadListView [items]="messagePhotoArray_28" marginRight="-2" *ngIf="tab == 1">
             <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"
                 itemHeight="200" spanCount="1">
             </ListViewGridLayout>
@@ -22,18 +43,21 @@
                             <!-- <FrescoDrawee horizontalAlignment="stretch" height="180"
                                 imageUri="{{ item.imageSrc }}"></FrescoDrawee> -->
                         </android>
-                        <GridLayout verticalAlignment="bottom">
-                            <StackLayout paddingTop="8" paddingBottom="8"
+                        <GridLayout height="{{ item.messageHeight }}" verticalAlignment="bottom" (tap)="switchMessageExpanded(item)">
+                            <StackLayout paddingTop="8" paddingBottom="8" [ngClass]="{'messageExpanded': item.messageExpanded}"
                                 paddingLeft="16" paddingRight="16" class="messageBox">
                                 <Label text="{{ item.name }}" class="messageName"></Label>
-                                <Label text="{{ item.message }}" class="messageMessage"></Label>
+                                <Label text="{{ item.message }}" class="messageMessage" *ngIf="item.messageExpanded == true"></Label>
                             </StackLayout>
                         </GridLayout>
                     </GridLayout>
                 </GridLayout>
             </ng-template>
         </RadListView>
-        <RadListView [items]="messagePhotoArray" marginRight="-2" *ngIf="tab == 1">
+        <StackLayout *ngIf="tab == 2 && messagePhotoArray_29.length == 0">
+            <Label text="You're not 29 yet! Come back when you are :)" class="birthdayMessage"></Label>
+        </StackLayout>
+        <RadListView [items]="messagePhotoArray_29" marginRight="-2" *ngIf="tab == 2">
             <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"
                 itemHeight="200" spanCount="1">
             </ListViewGridLayout>
@@ -50,11 +74,42 @@
                             <!-- <FrescoDrawee horizontalAlignment="stretch" height="180"
                                 imageUri="{{ item.imageSrc }}"></FrescoDrawee> -->
                         </android>
-                        <GridLayout verticalAlignment="bottom">
-                            <StackLayout paddingTop="8" paddingBottom="8"
+                        <GridLayout height="{{ item.messageHeight }}" verticalAlignment="bottom" (tap)="switchMessageExpanded(item)">
+                            <StackLayout paddingTop="8" paddingBottom="8" [ngClass]="{'messageExpanded': item.messageExpanded}"
                                 paddingLeft="16" paddingRight="16" class="messageBox">
                                 <Label text="{{ item.name }}" class="messageName"></Label>
-                                <Label text="{{ item.message }}" class="messageMessage"></Label>
+                                <Label text="{{ item.message }}" class="messageMessage" *ngIf="item.messageExpanded == true"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </ng-template>
+        </RadListView>
+        <StackLayout *ngIf="tab == 3 && messagePhotoArray_30.length == 0">
+            <Label text="You're not 30 yet! Come back when you are :)" class="birthdayMessage"></Label>
+        </StackLayout>
+        <RadListView [items]="messagePhotoArray_30" marginRight="-2" *ngIf="tab == 3">
+            <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"
+                itemHeight="200" spanCount="1">
+            </ListViewGridLayout>
+            <ng-template tkListItemTemplate let-item="item">
+                <GridLayout backgroundColor="White">
+                    <GridLayout>
+                        <ios>
+                            <Image src="{{ item.photo }}" stretch="aspectFill"></Image>
+                        </ios>
+                        <android>
+                            <Image src="{{ item.photo }}" stretch="aspectFill"
+                                height="350"></Image>
+
+                            <!-- <FrescoDrawee horizontalAlignment="stretch" height="180"
+                                imageUri="{{ item.imageSrc }}"></FrescoDrawee> -->
+                        </android>
+                        <GridLayout height="{{ item.messageHeight }}" verticalAlignment="bottom" (tap)="switchMessageExpanded(item)">
+                            <StackLayout paddingTop="8" paddingBottom="8" [ngClass]="{'messageExpanded': item.messageExpanded}"
+                                paddingLeft="16" paddingRight="16" class="messageBox">
+                                <Label text="{{ item.name }}" class="messageName"></Label>
+                                <Label text="{{ item.message }}" class="messageMessage" *ngIf="item.messageExpanded == true"></Label>
                             </StackLayout>
                         </GridLayout>
                     </GridLayout>

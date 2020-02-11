@@ -25,5 +25,19 @@
     color: darkgray;
     font-family: 'Nordica Plus', 'nordicaclassicltext';
     font-size: 18;
+    word-wrap: break-word;
+    white-space: normal;
     /* text-transform: uppercase; */
+}
+
+.messageExpanded {
+    background: rgba(46, 46, 46, 0.85);
+}
+
+.birthdayMessage {
+    font-family: 'Nordica Plus', 'nordicaclassicltext';
+    font-size: 40;
+    white-space: normal;
+    text-align: center;
+    color: rgb(0, 122, 192);
 }

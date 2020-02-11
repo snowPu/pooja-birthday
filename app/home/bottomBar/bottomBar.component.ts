@@ -29,7 +29,7 @@ export class BottomBarComponent implements OnInit {
 	}
 
 	ngAfterViewInit() {
-		setTimeout(() => { this.animateCurrentImage(this.image1); }, 100);
+		// setTimeout(() => { this.animateCurrentImage(this.image1); }, 100);
 	}
 
 	selectTab(index: number) {

@@ -3,3 +3,11 @@
 	font-size: 20;
 	margin: 15;
 }
+
+.selected-tab  {
+	background: rgb(0, 140, 255);
+}
+
+.bottomBar {
+	margin-top: 30px;
+}
